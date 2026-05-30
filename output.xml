@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-05-30T03:10:44.134227" rpa="false" schemaversion="5">
+<suite id="s1" name="Primeiro" source="C:\Projetos\cd\qa-automation-automationexercise\primeiro.robot">
+<kw name="Log To Console" owner="BuiltIn" type="SETUP">
+<arg>Suite Iniciada</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-05-30T03:10:44.896746" elapsed="0.000973"/>
+</kw>
+<test id="s1-t1" name="Teste 02" line="22">
+<kw name="Acesso a app" owner="keyword" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-05-30T03:10:44.901192" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>https://www.saucedemo.com/</arg>
+<arg>Chrome</arg>
+<arg>options=add_argument("--guest")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-05-30T03:10:44.900632" elapsed="4.683425"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-30T03:10:49.587665" level="INFO">Typing text 'standard_user' into text field '//input[@data-test="username"]'.</msg>
+<arg>${Locator.login}</arg>
+<arg>standard_user</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T03:10:49.584808" elapsed="0.336981"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-30T03:10:49.923715" level="INFO">Typing text 'secret_sauce' into text field '//input[@data-test="password"]'.</msg>
+<arg>${Locator.senha}</arg>
+<arg>secret_sauce</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T03:10:49.922218" elapsed="0.214010"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-05-30T03:10:50.137610" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
+<arg>//input[@data-test="login-button"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T03:10:50.136850" elapsed="0.263179"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-05-30T03:10:50.401576" level="INFO">Verifying element '//span[@data-test="title"]' contains exact text 'Products'.</msg>
+<arg>//span[@data-test="title"]</arg>
+<arg>Products</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-05-30T03:10:50.401024" elapsed="0.056229"/>
+</kw>
+<status status="PASS" start="2026-05-30T03:10:44.899470" elapsed="5.558185"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-30T03:10:50.459159" level="INFO">Clicking element '//button[@data-test="add-to-cart-sauce-labs-backpack"]'.</msg>
+<arg>//button[@data-test="add-to-cart-sauce-labs-backpack"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T03:10:50.458477" elapsed="0.215978"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-05-30T03:10:50.676551" level="INFO">Clicking link '//a[@data-test="shopping-cart-link"]'.</msg>
+<arg>//a[@data-test="shopping-cart-link"]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T03:10:50.675344" elapsed="0.155805"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//span[text()="Your Cart"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-30T03:10:50.831978" elapsed="0.148339"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-30T03:10:50.981404" level="INFO">Clicking element '//button[@data-test="remove-sauce-labs-backpack"]'.</msg>
+<arg>//button[@data-test="remove-sauce-labs-backpack"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-30T03:10:50.980934" elapsed="0.114961"/>
+</kw>
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2026-05-30T03:10:51.120244" level="INFO">Element '//*[@id="item_4_title_link"]' did not exist.</msg>
+<arg>//*[@id="item_4_title_link"]</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2026-05-30T03:10:51.096749" elapsed="0.023825"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary" type="TEARDOWN">
+<msg time="2026-05-30T03:10:51.231248" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-05-30T03:10:51.122421" elapsed="0.109164"/>
+</kw>
+<status status="PASS" start="2026-05-30T03:10:44.898243" elapsed="6.333793"/>
+</test>
+<kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
+<arg>Suite Terminada</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-05-30T03:10:51.234382" elapsed="0.003556"/>
+</kw>
+<status status="PASS" start="2026-05-30T03:10:44.139696" elapsed="7.098536"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Primeiro" id="s1" pass="1" fail="0" skip="0">Primeiro</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
