@@ -4,7 +4,9 @@ Library   SeleniumLibrary
 
 *** Keywords ***
 Acesso a app
-    Open Browser  https://www.saucedemo.com/     Chrome     options=add_argument("--guest")
+    Open Browser    ${URL}    ${BROWSER}    options=add_argument("--guest")
+    Maximize Browser Window
+   
     Input Text    ${Locator.login}   standard_user   #//input[@data-test="username"]  
     Input Text    ${Locator.senha}   secret_sauce   #//input[@data-test="password"]  
     Click Button   //input[@data-test="login-button"]

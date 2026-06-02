@@ -20,18 +20,14 @@ Teste 01
     Element Should Be Visible        //div[text()="Sauce Labs Backpack"]
    
 Teste 02
-    # [Documentation]    Adicionar produto ao carrinho, removê-lo e verificar se o carrinho está vazio
-    # Open Browser    ${URL}    ${BROWSER}
-    # Maximize Browser Window
-
+    [Documentation]    Adicionar produto ao carrinho, removê-lo e verificar se o carrinho está vazio
+    
     Click Element   //button[@data-test="add-to-cart-sauce-labs-backpack"]
     Click Link      //a[@data-test="shopping-cart-link"]
 
     Wait Until Element Is Visible    //span[text()="Your Cart"]    10s
     Click Element   //button[@data-test="remove-sauce-labs-backpack"]
     Element Should Not Be Visible    //*[@id="item_4_title_link"]
-
-    # Close Browser
 
     # No operation
     # Adicionar um produto no carrrinho
