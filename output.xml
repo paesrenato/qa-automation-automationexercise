@@ -1,107 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-02T01:27:02.562978" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-03T02:07:15.119056" rpa="false" schemaversion="5">
 <suite id="s1" name="Primeiro" source="C:\Projetos\cd\qa-automation-automationexercise\primeiro.robot">
-<kw name="Log To Console" owner="BuiltIn" type="SETUP">
-<arg>Suite Iniciada</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-06-02T01:27:03.211591" elapsed="0.001011"/>
-</kw>
-<test id="s1-t1" name="Teste 02" line="22">
-<kw name="Acesso a app" owner="keyword" type="SETUP">
+<test id="s1-t1" name="Teste Loops" line="43">
+<kw name="Acesso a app" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-06-02T01:27:03.217936" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<arg>options=add_argument("--guest")</arg>
+<msg time="2026-06-03T02:07:15.811111" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>https://www.saucedemo.com/</arg>
+<arg>Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-06-02T01:27:03.216912" elapsed="3.293384"/>
+<status status="PASS" start="2026-06-03T02:07:15.810643" elapsed="3.301049"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-06-02T01:27:06.510925" elapsed="0.131281"/>
+<status status="PASS" start="2026-06-03T02:07:19.112479" elapsed="0.085372"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-06-02T01:27:06.646359" level="INFO">Typing text 'standard_user' into text field '//input[@data-test="username"]'.</msg>
-<arg>${Locator.login}</arg>
-<arg>standard_user</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-02T01:27:06.642788" elapsed="0.385552"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-06-02T01:27:07.031373" level="INFO">Typing text 'secret_sauce' into text field '//input[@data-test="password"]'.</msg>
-<arg>${Locator.senha}</arg>
-<arg>secret_sauce</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-02T01:27:07.029420" elapsed="0.226607"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-06-02T01:27:07.256859" level="INFO">Clicking button '//input[@data-test="login-button"]'.</msg>
-<arg>//input[@data-test="login-button"]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-02T01:27:07.256419" elapsed="0.301694"/>
-</kw>
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2026-06-02T01:27:07.559476" level="INFO">Verifying element '//span[@data-test="title"]' contains exact text 'Products'.</msg>
-<arg>//span[@data-test="title"]</arg>
-<arg>Products</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2026-06-02T01:27:07.558708" elapsed="0.074736"/>
-</kw>
-<status status="PASS" start="2026-06-02T01:27:03.215306" elapsed="4.418409"/>
+<status status="PASS" start="2026-06-03T02:07:15.808759" elapsed="3.389863"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-02T01:27:07.635200" level="INFO">Clicking element '//button[@data-test="add-to-cart-sauce-labs-backpack"]'.</msg>
-<arg>//button[@data-test="add-to-cart-sauce-labs-backpack"]</arg>
+<msg time="2026-06-03T02:07:19.216163" level="INFO">Clicking element '//button[@id="add-to-cart-sauce-labs-backpack"]'.</msg>
+<msg time="2026-06-03T02:07:19.504144" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-03T02:07:19.504690" level="FAIL">Element with locator '//button[@id="add-to-cart-sauce-labs-backpack"]' not found.</msg>
+<arg>//button[@id="add-to-cart-sauce-labs-backpack"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-02T01:27:07.634486" elapsed="0.155872"/>
+<status status="FAIL" start="2026-06-03T02:07:19.214746" elapsed="0.300702">Element with locator '//button[@id="add-to-cart-sauce-labs-backpack"]' not found.</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//button[@id="add-to-cart-sauce-labs-bike-light"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-03T02:07:19.516584" elapsed="0.000186"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//button[@id="add-to-cart-sauce-labs-bolt-t-shirt"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-03T02:07:19.517596" elapsed="0.000242"/>
 </kw>
 <kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2026-06-02T01:27:07.792133" level="INFO">Clicking link '//a[@data-test="shopping-cart-link"]'.</msg>
 <arg>//a[@data-test="shopping-cart-link"]</arg>
 <doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-02T01:27:07.791419" elapsed="0.171047"/>
+<status status="NOT RUN" start="2026-06-03T02:07:19.521982" elapsed="0.000199"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>//span[text()="Your Cart"]</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-02T01:27:07.963432" elapsed="0.067631"/>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${Existe_botao}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//button[text()="Remove"]</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2026-06-03T02:07:19.524548" elapsed="0.000167"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-02T01:27:08.032377" level="INFO">Clicking element '//button[@data-test="remove-sauce-labs-backpack"]'.</msg>
-<arg>//button[@data-test="remove-sauce-labs-backpack"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-02T01:27:08.031837" elapsed="0.112333"/>
+<while condition="${Existe_botao}">
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>//div[@data-test="inventory-item"][1]//button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-03T02:07:19.527967" elapsed="0.000163"/>
 </kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${Existe_botao}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//button[text()="Remove"]</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2026-06-03T02:07:19.528801" elapsed="0.000165"/>
+</kw>
+<status status="NOT RUN" start="2026-06-03T02:07:19.527118" elapsed="0.002141"/>
+</iter>
+<status status="NOT RUN" start="2026-06-03T02:07:19.527106" elapsed="0.002370"/>
+</while>
 <kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
-<msg time="2026-06-02T01:27:08.169219" level="INFO">Element '//*[@id="item_4_title_link"]' did not exist.</msg>
-<arg>//*[@id="item_4_title_link"]</arg>
+<arg>//span[@class="shopping_cart_badge"]</arg>
 <doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<status status="PASS" start="2026-06-02T01:27:08.144990" elapsed="0.024462"/>
+<status status="NOT RUN" start="2026-06-03T02:07:19.547166" elapsed="0.000158"/>
 </kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary" type="TEARDOWN">
-<msg time="2026-06-02T01:27:08.284183" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2026-06-02T01:27:08.171452" elapsed="0.113073"/>
-</kw>
-<doc>Adicionar produto ao carrinho, removê-lo e verificar se o carrinho está vazio</doc>
-<status status="PASS" start="2026-06-02T01:27:03.213188" elapsed="5.071826"/>
+<status status="FAIL" start="2026-06-03T02:07:15.805940" elapsed="3.742355">Element with locator '//button[@id="add-to-cart-sauce-labs-backpack"]' not found.</status>
 </test>
-<kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
-<arg>Suite Terminada</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-06-02T01:27:08.287174" elapsed="0.001385"/>
-</kw>
-<status status="PASS" start="2026-06-02T01:27:02.567186" elapsed="5.721707"/>
+<status status="FAIL" start="2026-06-03T02:07:15.124185" elapsed="4.441965"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Primeiro" id="s1" pass="1" fail="0" skip="0">Primeiro</stat>
+<stat name="Primeiro" id="s1" pass="0" fail="1" skip="0">Primeiro</stat>
 </suite>
 </statistics>
 <errors>

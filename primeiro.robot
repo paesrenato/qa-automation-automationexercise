@@ -1,33 +1,83 @@
 *** Settings ***
+Library    SeleniumLibrary
+Resource   variaveis.robot  
+Resource   keyword.robot
 
-Library           SeleniumLibrary
-Resource          variaveis.robot  
-Resource          keyword.robot
-
-Suite Setup    Log To Console    Suite Iniciada
+# Suite Setup    Log To Console    Suite Iniciada
 
 Test Setup     Acesso a app
-Test Teardown  Capture Page Screenshot
+# Test Teardown  Capture Page Screenshot
 
-Suite Teardown  Log to Console  Suite Terminada
+# Suite Teardown  Log to Console  Suite Terminada
+
+*** Variables ***
+@{componentes} =    Petronio   Renan   Renato    Alexandre
+@{num}  10 
 
 *** Test Cases ***
-Teste 01
-    Click Element   //button[@data-test="add-to-cart-sauce-labs-backpack"]
-    Click Link      //a[@data-test="shopping-cart-link"]
+ Loops
+  [tags]  01
 
-    Wait Until Element Is Visible    //span[text()="Your Cart"]    10s
-    Element Should Be Visible        //div[text()="Sauce Labs Backpack"]
+    FOR  ${petronio}  IN RANGE  1  10
+        Log to console  ${petronio}
+    END
+
+
+    FOR  ${petronio}  IN  @{componentes}
+        Log to console  ${petronio}
+    END
+     
+    IF  ${num} == 0
+       Log to console  Petronio
+    ELSE
+        Log to console  Alexandre
+    END
+
+  ${aux}=  Set Variable  10
+  ${TEMP}=  Set Variable  0
+  WHILE  ${aux} != 1
+     log to console    ${aux}
+     ${aux}=  evaluate  ${aux} / 5 
+  END
+
+Teste Loops
+    # Adiciono 3 produtos
+    Click Element    //button[@id="add-to-cart-sauce-labs-backpack"]
+    Click Element    //button[@id="add-to-cart-sauce-labs-bike-light"]
+    Click Element    //button[@id="add-to-cart-sauce-labs-bolt-t-shirt"]
+
+   # Entro na pagina do carrinho
+   Click Link     //a[@data-test="shopping-cart-link"]
    
-Teste 02
-    [Documentation]    Adicionar produto ao carrinho, removê-lo e verificar se o carrinho está vazio
-    
-    Click Element   //button[@data-test="add-to-cart-sauce-labs-backpack"]
-    Click Link      //a[@data-test="shopping-cart-link"]
+   # Valida se existe algum botao Remove na pagina
+   ${Existe_botao}   Run Keyword And Return Status    Element Should Be Visible   //button[text()="Remove"]
 
-    Wait Until Element Is Visible    //span[text()="Your Cart"]    10s
-    Click Element   //button[@data-test="remove-sauce-labs-backpack"]
-    Element Should Not Be Visible    //*[@id="item_4_title_link"]
+  WHILE  ${Existe_botao}  
+    Click Button    //div[@data-test="inventory-item"][1]//button
+    ${Existe_botao}   Run Keyword And Return Status    Element Should Be Visible   //button[text()="Remove"]
+  END 
+
+  Element Should Not Be Visible    //span[@class="shopping_cart_badge"]
+
+
+# # AULA SOBRE ROBOT FRAMEWORK (Test e Suite - Setup e Teardown)- 27/05/2026
+# *** Test Cases ***
+# Teste 01
+#     Click Element   //button[@data-test="add-to-cart-sauce-labs-backpack"]
+#     Click Link      //a[@data-test="shopping-cart-link"]
+
+#     Wait Until Element Is Visible    //span[text()="Your Cart"]    10s
+#     Element Should Be Visible        //div[text()="Sauce Labs Backpack"]
+   
+# Teste 02
+#     [Documentation]    Adicionar produto ao carrinho, removê-lo e verificar se o carrinho está vazio
+    
+#     Click Element   //button[@data-test="add-to-cart-sauce-labs-backpack"]
+#     Click Link      //a[@data-test="shopping-cart-link"]
+
+#     Wait Until Element Is Visible    //span[text()="Your Cart"]    10s
+#     Click Element   //button[@data-test="remove-sauce-labs-backpack"]
+#     Element Should Not Be Visible    //*[@id="item_4_title_link"]
 
     # No operation
     # Adicionar um produto no carrrinho

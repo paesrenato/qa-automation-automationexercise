@@ -1,6 +1,8 @@
 *** Settings ***
 Resource  variaveis.robot  
+Resource  keyword.robot
 Library   SeleniumLibrary
+
 
 *** Keywords ***
 Acesso a app
