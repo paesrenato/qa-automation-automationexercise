@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-03T02:07:15.119056" rpa="false" schemaversion="5">
+<suite id="s1" name="Primeiro" source="C:\Projetos\cd\qa-automation-automationexercise\primeiro.robot">
+<test id="s1-t1" name="Teste Loops" line="43">
+<kw name="Acesso a app" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-03T02:07:15.811111" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>https://www.saucedemo.com/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-03T02:07:15.810643" elapsed="3.301049"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-03T02:07:19.112479" elapsed="0.085372"/>
+</kw>
+<status status="PASS" start="2026-06-03T02:07:15.808759" elapsed="3.389863"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-03T02:07:19.216163" level="INFO">Clicking element '//button[@id="add-to-cart-sauce-labs-backpack"]'.</msg>
+<msg time="2026-06-03T02:07:19.504144" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-03T02:07:19.504690" level="FAIL">Element with locator '//button[@id="add-to-cart-sauce-labs-backpack"]' not found.</msg>
+<arg>//button[@id="add-to-cart-sauce-labs-backpack"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-03T02:07:19.214746" elapsed="0.300702">Element with locator '//button[@id="add-to-cart-sauce-labs-backpack"]' not found.</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//button[@id="add-to-cart-sauce-labs-bike-light"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-03T02:07:19.516584" elapsed="0.000186"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//button[@id="add-to-cart-sauce-labs-bolt-t-shirt"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-03T02:07:19.517596" elapsed="0.000242"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<arg>//a[@data-test="shopping-cart-link"]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-03T02:07:19.521982" elapsed="0.000199"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${Existe_botao}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//button[text()="Remove"]</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2026-06-03T02:07:19.524548" elapsed="0.000167"/>
+</kw>
+<while condition="${Existe_botao}">
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>//div[@data-test="inventory-item"][1]//button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-03T02:07:19.527967" elapsed="0.000163"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${Existe_botao}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//button[text()="Remove"]</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2026-06-03T02:07:19.528801" elapsed="0.000165"/>
+</kw>
+<status status="NOT RUN" start="2026-06-03T02:07:19.527118" elapsed="0.002141"/>
+</iter>
+<status status="NOT RUN" start="2026-06-03T02:07:19.527106" elapsed="0.002370"/>
+</while>
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<arg>//span[@class="shopping_cart_badge"]</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="NOT RUN" start="2026-06-03T02:07:19.547166" elapsed="0.000158"/>
+</kw>
+<status status="FAIL" start="2026-06-03T02:07:15.805940" elapsed="3.742355">Element with locator '//button[@id="add-to-cart-sauce-labs-backpack"]' not found.</status>
+</test>
+<status status="FAIL" start="2026-06-03T02:07:15.124185" elapsed="4.441965"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Primeiro" id="s1" pass="0" fail="1" skip="0">Primeiro</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
